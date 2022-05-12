@@ -108,6 +108,17 @@ pip install -r requirements.txt
 ```
 
 If you want to use Atari environment, you need to get Atari ROMs
+You can use the version in this repository by
+
+```sh
+cp atari_roms/Roms.tar.gz .
+tar -xzf Roms.tar.gz
+python -m atari_py.import_roms ROMS
+rm -rf Roms.tar.gz *ROMS.zip ROMS 
+
+```
+
+or alternatively sownload them and install them 
 
 ```sh
 pip install atari-py==0.2.9
