@@ -156,7 +156,7 @@ atari:
   generator_prefill_steps: 50_000
   clip_rewards: tanh
   # Model
-  deter_dim: 1024
+  deter_dim: 1000  # original 1024
   kl_weight: 0.1
   gamma: 0.99
   entropy: 0.001
