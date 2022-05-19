@@ -13,3 +13,4 @@ torch-tb-profiler
 # Agents
 numba
 scikit-image
+scipy
