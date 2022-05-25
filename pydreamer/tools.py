@@ -113,10 +113,12 @@ def mlflow_load_checkpoint(model, optimizers=tuple(), artifact_path='checkpoints
         run_id = mlflow.active_run().info.run_id  # type: ignore
         try:
             path = client.download_artifacts(run_id, artifact_path, tmpdir)
+            #added
+            checkpoint = torch.load(path, map_location=map_location)
         except Exception as e:  # TODO: check if it's an error instead of expected "not found"
             # Checkpoint not found
             return None
-        checkpoint = torch.load(path, map_location=map_location)
+        #checkpoint = torch.load(path, map_location=map_location)
         model.load_state_dict(checkpoint['model_state_dict'])
         for i, opt in enumerate(optimizers):
             opt.load_state_dict(checkpoint[f'optimizer_{i}_state_dict'])
